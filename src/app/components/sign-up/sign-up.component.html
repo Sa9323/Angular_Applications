@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="myCard">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="myLeftCtn">
+                    <form class="myForm text-center">
+                        <header style="font-size: 2em;">Sign Up</header>
+                        <!-- <div class="form-group p-2">
+                            <i class="fas fa-user"></i>
+                            <input type="text" class="formControl myInput" placeholder="Username" #userName required>
+                        </div>-->
+
+                        <div class="form-group p-2">
+                            <i class="fas fa-user"></i>
+                            <input type="email" class="formControl myInput" placeholder="Email Address" #userEmail
+                                required>
+                        </div>
+
+                        <div class="form-group p-2">
+                            <i class="fas fa-envelope"></i>
+                            <input type="password" class="formControl myInput" placeholder="Password" #userPwd required>
+                        </div>
+
+                        <!-- <div class="form-group p-2">
+                            <i class="fas fa-envelope"></i>
+                            <input type="password" class="formControl myInput" placeholder="Confirm Password" #userCPwd required>
+                        </div> -->
+
+                        <!-- Calling SignIn Api from AuthService -->
+                        <div class="formGroup p-2">
+                            <input type="button" class="butt" style="cursor: pointer;" value="Create Account"
+                                (click)="authService.SignUp(userEmail.value, userPwd.value)">
+                        </div>
+                        <div class="formGroup p-2">
+                            <span class="or"><span class="orInner">Or</span></span>
+                        </div>
+                        <!-- Calling GoogleAuth Api from AuthService -->
+                        <div class="formGroup p-2">
+                            <button type="button" class="btn googleBtn" style="cursor: pointer;" (click)="authService.GoogleAuth()">
+                                <i class="fab fa-google-plus-g"></i>
+                                <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                            </button>
+                        </div>
+                       
+                        <div class="form-group p-2">
+                            <span style="display: inline-flex; align-items: baseline;">Already have an account?  &nbsp;<span style="cursor: pointer;" routerLink="/sign-in">
+                                    <header>Sign In</header>
+                                </span></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="myRightCtn">
+                    <div class="box">
+                        <header>Welcome!</header>
+
+                        <p>Our heartiest welcome goes to you. Congratulations on being part of our growing and dynamic team here! We're honored to have you with us!</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

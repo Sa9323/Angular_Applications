@@ -1,0 +1,43 @@
+<div>
+    <nav id="header" class="navbar custom-nav fixed-top">
+        <div class="navbar-brand">
+            <span class="redirect" routerLink="/dashboard"> <header style="padding-left: 10px;cursor: pointer;">Dashboard</header></span>
+        </div>
+        <div id="nav-menu" class="navbar-menu" style="display: inline-flex; align-items: baseline;">
+            <div class="navbar-start">
+                <a style="padding-right: 10px; cursor: pointer;" class="nav-link" (click)="authService.SignOut()">
+                    <img style="width: 20px;height: 20px;opacity: 0.5;margin-right: 2px;" src="assets/logout.png">Log out
+                  </a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+  <!-- Sidebar navigation -->
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Main content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="padding-top: 100px;">
+        <div class="inner-adjust">
+          <div class="pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">User Profile</h1>
+          </div>
+          <!-- Show user data when logged in -->
+          <div class="row" *ngIf="authService.userData as user">
+            <div class="col-md-12">
+              <div class="media">
+                <img class="align-self-start rounded-circle" style="width: 200px;height: 200px;" src="assets/dummy-user.jpg">
+                <div class="media-body">
+                  <p>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></p>
+                  <p>User ID: <strong>{{user.uid}}</strong></p>
+                  <p>Email: <strong>{{user.email}}</strong></p>
+                  <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
