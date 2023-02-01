@@ -18,17 +18,8 @@ export class DashboardComponent implements OnInit {
   */
     this.renderer.listen('window', 'click', (e: Event) => {
 
-      if (e.target !== this.showLoginMenu.nativeElement) {
-        this.isLoginPopupShown = false;
-      }
     });
   }
-
-  lastLoginTime: string;
-  username: string;
-  isLoginPopupShown: boolean = false;
-
-  @ViewChild('showLoginMenu') showLoginMenu: ElementRef;
 
   ngOnInit(): void { }
 }
