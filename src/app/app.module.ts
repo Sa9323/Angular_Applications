@@ -16,7 +16,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { AuthService } from "./shared/services/auth.service";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   //providers: [],
   providers: [AuthService],

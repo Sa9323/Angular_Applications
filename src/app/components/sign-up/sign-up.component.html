@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="myLeftCtn">
-                    <form class="myForm text-center">
+                    <form class="myForm text-center" [formGroup]="form" (ngSubmit)="onSubmit()">
                         <header style="font-size: 2em;">Sign Up</header>
 
                         <!-- <div class="form-group p-2">
@@ -12,14 +12,15 @@
                         </div>-->
 
                         <div class="form-group p-2">
-                            <i class="fas fa-user"></i>
-                            <input type="email" class="formControl myInput" placeholder="Email Address" #userEmail
+                            <input type="email" formControlName="userEmail" class="formControl myInput"
+                                placeholder="Email Address" #userEmail
                                 required>
                         </div>
 
                         <div class="form-group p-2">
-                            <i class="fas fa-envelope"></i>
-                            <input type="password" class="formControl myInput" placeholder="Password" #userPwd required>
+                            <input type="password" formControlName="userPwd" class="formControl myInput"
+                                placeholder="Password" #userPwd 
+                                required>
                         </div>
 
                         <!-- <div class="form-group p-2">
@@ -37,7 +38,8 @@
                         </div>
                         <!-- Calling GoogleAuth Api from AuthService -->
                         <div class="formGroup p-2">
-                            <button type="button" class="btn googleBtn" style="cursor: pointer;" (click)="authService.GoogleAuth()">
+                            <button type="button" class="btn googleBtn" style="cursor: pointer;"
+                                (click)="authService.GoogleAuth()">
                                 <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
                                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
                             </button>
